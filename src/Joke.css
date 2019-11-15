@@ -1,0 +1,18 @@
+.Joke {
+    padding: 10px;
+    margin: 10px;
+    width: 900px;
+    display: flex;
+    border: 1px solid red;
+}
+
+.Joke-joke {
+    width: 800px;
+    align-content: flex-start;
+}
+
+.Joke-rating  {
+    align-content: flex-end;
+    align-items: center;
+    border: 1px solid green;
+}

@@ -10,7 +10,8 @@ class DadJokes extends Component {
         this.api_url = 'https://icanhazdadjoke.com/';
 
         this.state = {
-            jokes: []
+            jokes: [],
+            isLoading: false
         }
         this.getJokes = this.getJokes.bind(this);
         this.getMoreJokes = this.getMoreJokes.bind(this);
@@ -18,6 +19,8 @@ class DadJokes extends Component {
 
     async getJokes(count = 10) {
         const jokes = [];
+        // Set isLoading to true to show the activity spinner
+        this.setState({ isLoading: true });
         while(count) {
             // request the initial joke
             let response = await axios.get(this.api_url, { headers: { Accept: 'application/json'}});
@@ -31,7 +34,8 @@ class DadJokes extends Component {
         }
         this.setState(cs => {
             return {
-                jokes: [...cs.jokes, ...jokes]
+                jokes: [...cs.jokes, ...jokes],
+                isLoading: false
             };
         });
     }
@@ -42,20 +46,25 @@ class DadJokes extends Component {
 
     componentDidMount() {
         this.getJokes(5);
-        console.log('in componentDidMount', this.state.jokes);
     }
 
     render() {
-        console.log('In Render', this.state.jokes);
         const jokes = this.state.jokes.map(j => {
             return <Joke key={j.id} id={j.id} joke={j.joke} />
         });
-        console.log('Joke line items: ', jokes);
         return(
             <div className="DadJokes">
                 <h1>Dad Jokes</h1>
-                <button onClick={this.getMoreJokes}>Get More Jokes!</button>
-                {jokes}
+                <div className="DadJokes-container">
+                    <div className="DadJokes-control">
+                        <img src='./Koya.svg' alt="Koya" />
+                        <button onClick={this.getMoreJokes}>Get More Jokes!</button>
+                        {this.state.isLoading ? <div className='loader'>Loading...</div> : ''}
+                    </div>
+                    <div className="DadJokes-jokes">
+                        {jokes}
+                    </div>
+                </div>
             </div>
         );
     }

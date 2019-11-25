@@ -1,22 +1,8 @@
 .App {
+  height: 100vh;
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  background: rgb(83,1,176);
+  background: linear-gradient(90deg, rgba(83,1,176,1) 0%, rgba(92,9,121,1) 29%, rgba(243,200,255,1) 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}

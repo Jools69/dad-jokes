@@ -1,18 +1,19 @@
 .Joke {
     padding: 10px;
     margin: 10px;
-    width: 900px;
     display: flex;
-    border: 1px solid red;
+    font-size: 20px;
+    color: white;
+    border-bottom: 1px solid rgb(212, 171, 254);
 }
 
 .Joke-joke {
-    width: 800px;
+    width: 90%;
     align-content: flex-start;
 }
 
 .Joke-rating  {
     align-content: flex-end;
+    margin-left: auto;
     align-items: center;
-    border: 1px solid green;
 }

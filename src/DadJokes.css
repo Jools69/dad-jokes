@@ -4,4 +4,83 @@
 }
 .DadJokes h1 {
     text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: ghostwhite;
+    padding: 30px;
 }
+
+.DadJokes img {
+    margin: 70px 20px;
+}
+.DadJokes-container {
+    display: flex;
+}
+
+.DadJokes-control {
+    display: flex;
+    flex-direction: column;
+    min-width: 20%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(103, 39, 255);
+    height: 80vh;
+}
+
+.DadJokes-control button {
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: purple;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.DadJokes-jokes {
+    flex-grow: 2;
+    min-width: 80%;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    vertical-align: center;
+    background-color: rgb(9, 17, 254);
+    height: 70vh;
+}
+
+.loader {
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 150px;
+    position: relative;
+    border-radius: 15px;
+    border: 2px solid rgba(163, 47, 245, 0.817);
+    background-color: rgba(209, 131, 242, 0.707);
+    animation-duration: 1s;
+    animation-name: pulse;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+    text-align: center;
+    align-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.0;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.0;
+    }
+}
+
